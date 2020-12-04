@@ -1,15 +1,20 @@
 # DosiVox
 
-**DosiVox** (version 1.0) is a free software (GNU GPL3 licence, see above) based on the [Geant4](http://geant4.org) C++ libraries (Agostinelli *et al.*, 2003; Allison *et al.*, 2006; Allison *et al.*, 2016) and responding to the [Geant4 Software Licence](http://cern.ch/geant4/license) (version Geant4 10.1). It is developed by L. Martin, N. Mercier and S. Incerti at the IRAMAT-CRP2A[^1] and the CENBG[^2]. **DosiVox** allows constructing voxelised models of archeological objects and simulating the radioactivity for dose calculation with a Monte-Carlo approach (Martin *et al.*, 2015a; Martin *et al.*, 2015b; Martin 2015). These dose calculations can be used in the context of trapped charge dating. DosiVox use Pilot Text Files (PTF) to set the simulation geometry and parameters, allowing to create simulation by writing or editing a text file -> no skill in programming nor in Geant4 are required.
+**DosiVox** (version 1.0) is a free software (GNU GPL3 licence, see above) based on the [Geant4](http://geant4.org) C++ libraries (Agostinelli *et al.*, 2003; Allison *et al.*, 2006; Allison *et al.*, 2016) and responding to the [Geant4 Software Licence](http://cern.ch/geant4/license) (version Geant4 10.1). It is developed by L. Martin, N. Mercier and S. Incerti at the IRAMAT-CRP2A\[1\] and the CENBG\[2\]. **DosiVox** allows constructing voxelised models of archeological objects and simulating the radioactivity for dose calculation with a Monte-Carlo approach (Martin *et al.*, 2015a; Martin *et al.*, 2015b; Martin 2015). These dose calculations can be used in the context of trapped charge dating. DosiVox use Pilot Text Files (PTF) to set the simulation geometry and parameters, allowing to create simulation by writing or editing a text file -> no skill in programming nor in Geant4 are required.
 
 **DosiVox** runs on Linux system and was developped on a Scientific Linux (Red Hat) virtual machine available at <http://geant4.in2p3.fr/spip.php?rubrique8>. As explained in Martin (2015): the alpha particle specta (Uapha, Thalpha) are constructed from the NIST online database (version 5.0.0, october 2012; Kramida *et al.*, 2018); the beta particle spectra (Ubeta, Thbeta, Kbeta) and the gamma particle spectra (Ugamma, Thgamma) are based on the data from the NNDC (Brookhaven National Laboratory, USA <http://www.nndc.bnl.gov>) online database NuDat (version november 2009). In addition, the K gamma spectra (Kgamma) is constructed from NNDC online database NuDat (version january 2013; Kinsey *et al.*, 1996).
 
-[^1]: Institut de Recherche sur les ArchéoMATériaux - Centre de Recherche en Physique Appliquée à l'Archéologie <http://www.iramat-crp2a.cnrs.fr>
-[^2]: Centre d'Etudes Nucléaires de Bordeaux Gradignan <http://www.cenbg.in2p3.fr>
-
 ## Installation
 
-Extract the DosiVox.zip archive in the Home folder. In a Windows or OS-X operating system, run the Scientific Linux virtual machine and extract the DosiVox.zip archive in the virtual machine Home folder. More explanations are available in the DosiVox Installation Guide.
+You can download the software as a zip from from this [URL](http://github.com/crp2a/DosiVox/archive/master.zip).
+
+To download the package source as you see it on GitHub, for offline browsing, use this line at the shell prompt (assuming you have Git installed on your computer):
+
+``` shell
+git clone https://github.com/crp2a/DosiVox.git
+```
+
+Extract the archive your home folder. In a Windows or OS-X operating system, run the Scientific Linux virtual machine and extract the archive in the virtual machine Home folder. More explanations are available in the DosiVox Installation Guide.
 
 ## Usage
 ### Setting a simulation with PTF
@@ -75,13 +80,13 @@ These results text files can be open with common spreadsheets. Detailed explanat
 Some example of PTF are provided with DosiVox, in the `DosiVox/data` folder:
 
 * `XPL0` creates two voxels filled respectively by clay and quartz. It simulates the alpha radioactivity of the U-series in the clay, allowing to record the dose attenuation in the quartz with the probe detector.
-* `XPL1` is a PTF for creating a simple voxelisation as a $3 \times 3 \times 3$ grid and only the probe detector. beta particles of the U-series are simulated.
-* `XPL1bis` creates a similar model than `XPL1`, but with a $20 \times 20 \times 20$ grid.
-* `XPL2` creates a $20 \times 20 \times 20$ voxels model with water, air and sediment type materials, for simulation of gamma particles. Only the probe detector is defined
-* `XPL3` defines a single random packing of grains as detector in a $20 \times 20 \times 20$ grid, in addition to the probe detector. Beta particles of the Th-series are simulated.
+* `XPL1` is a PTF for creating a simple voxelisation as a 3 x 3 x 3 grid and only the probe detector. beta particles of the U-series are simulated.
+* `XPL1bis` creates a similar model than `XPL1`, but with a 20 x 20 x 20 grid.
+* `XPL2` creates a 20 x 20  20 voxels model with water, air and sediment type materials, for simulation of gamma particles. Only the probe detector is defined
+* `XPL3` defines a single random packing of grains as detector in a 20 x 20 x 20 grid, in addition to the probe detector. Beta particles of the Th-series are simulated.
 * `XPL3bis` uses the same configuration as `XPL3` but creating successive random packings of grains as detectors.
-* `XPL4` defines a sub-voxelisation of $20 \times 20 \times 20$ as detector in a voxel of the main $20 \times 20 \times 20$ grid. Alpha particles of the U-series are simulated in this model.
-* `XPL5` used the sub-voxelised detector to model a flint in a $120 \times 250 \times 101$ sub-voxels grid. Beta particles of the U-series are simulated, and only the doses in the sub-voxels representing the flint are mapped.
+* `XPL4` defines a sub-voxelisation of 20 x 20 x 20 as detector in a voxel of the main 20 x 20 x 20 grid. Alpha particles of the U-series are simulated in this model.
+* `XPL5` used the sub-voxelised detector to model a flint in a 120 x 250 x 101 sub-voxels grid. Beta particles of the U-series are simulated, and only the doses in the sub-voxels representing the flint are mapped.
 
 Detailed explanations are available in the DosiVox Manual.
 
@@ -116,6 +121,9 @@ Schneider, C. A., Rasband, W. S., Eliceiri, K. W., 2012. NIH Image to ImageJ: 25
 
 DosiVox is provided under the terms and conditions of the DosiVox Software License (GNU GPL3).
 
-Neither the authors of this software system, nor their employing institutes, nor the agencies providing financial support for this work make any representation or warranty, express or implied, regarding this software system or assume any liability for its use. Please see the license in the file DosiVox_Software_Licence and URL above for the full disclaimer and the limitation of liability.
+Neither the authors of this software system, nor their employing institutes, nor the agencies providing financial support for this work make any representation or warranty, express or implied, regarding this software system or assume any liability for its use. Please see the [LICENSE](LICENSE) file for the full disclaimer and the limitation of liability.
 
 By using, copying, modifying or distributing the software (or any work based on the software) you agree to acknowledge its use in resulting acceptance of all terms of the DosiVox Software license.
+
+1. Institut de Recherche sur les ArchéoMATériaux - Centre de Recherche en Physique Appliquée à l'Archéologie <http://www.iramat-crp2a.cnrs.fr>
+2. Centre d'Etudes Nucléaires de Bordeaux Gradignan <http://www.cenbg.in2p3.fr>
