@@ -1,0 +1,55 @@
+# Macro file for the visualization setting in the initialization phase 
+# of DosiVox when running in interactive mode
+#
+
+# Use these open statements to open selected visualization
+#
+# Use this open statement to create an OpenGL view:
+/vis/open OGLSQt
+#/vis/open OGLIQt
+/vis/ogl/set/displayListLimit 500000
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh true
+#/vis/verbose errors
+
+# Draw geometry:
+/vis/drawVolume world
+
+# Specify view angle:
+#/vis/viewer/set/viewpointThetaPhi 100 89
+/vis/viewer/set/viewpointVector 0.564721 0.811088 -0.152729
+/vis/viewer/set/upVector -0.290063 -0.218864 -0.931645
+/vis/viewer/set/lightsThetaPhi 120 50
+
+# Specify rotation style
+/vis/viewer/set/rotationStyle freeRotation
+
+# Specify zoom value:
+#/vis/viewer/zoom 2.
+
+# Specify style (surface, wireframe, auxiliary edges,...)
+#/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge false
+/vis/viewer/set/lineSegmentsPerCircle 12
+
+# Draw coordinate axes:
+/vis/scene/add/axes 0 0 0 3 mm
+
+# Draw smooth trajectories at end of event, showing trajectory points
+# as markers 2 pixels wide:
+/vis/scene/add/trajectories smooth
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByCharge-0/default/setStepPtsSize 1
+# (if too many tracks cause core dump => /tracking/storeTrajectory 0)
+
+# To superimpose all of the events from a given run:
+/vis/scene/endOfEventAction accumulate -1
+#/vis/scene/endOfEventAction accumulate 1000
+
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh false
+/vis/verbose warnings
+

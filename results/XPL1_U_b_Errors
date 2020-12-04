@@ -1,0 +1,2 @@
+list of the particles killed because of an infinite loop in path calculation:
+particle remaining_energy(keV) positionX(mm) positionY(mm) positionZ(mm) object object_number object_material

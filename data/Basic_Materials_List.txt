@@ -1,0 +1,28 @@
+## Basic Material Format :
+## for materials predefined in the Geant4 code (first 17 elements):  Index number, Name,tabulated Density(g/cm3)
+##
+
+0  H2O		1
+1  SiO2		2.65
+2  Al2O3	4.0
+3  CaCO3	2.711
+4  MgCO3 	3.0
+5  Limestone	2.7 *
+6  ZrSiO4	4.0
+7  KF		2.6 **
+8  H_apatite	3.8 ***
+9  Fe2O3	5.242
+10 FeO		5.745
+11 MgO		3.58
+12 CaO		3.35
+13 Na2O		2.27
+14 K2O		2.35
+15 air		0.00129
+16 vacuum	0
+17 lead		11.35
+
+*	CaCO3 70% in mass, MgCO3 30% in mass
+** 	potassic feldspar
+***	Hydroxyapatite: Ca5(PO4)3(OH)
+ 
+ 

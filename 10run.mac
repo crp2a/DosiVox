@@ -1,0 +1,21 @@
+
+# for verbosity
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+
+#/process/msc/StepLimit UseSafety
+/process/msc/StepLimit UseDistanceToBoundary
+#/process/msc/StepLimit Minimal
+
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+/run/beamOn 1000000000
+
